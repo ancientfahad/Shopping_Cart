@@ -147,23 +147,33 @@ body:not(.loading) #footer {
     }
 }
 
+/* Ensure the parent container is flex and centered */
+.container {
+    display: flex;
+    justify-content: center;  /* Horizontally center */
+    align-items: center;      /* Vertically center */
+    min-height: 100vh;         /* Take full viewport height */
+}
+
 /* Default (Mobile) View */
 #cart-container {
     height: 650px;
     width: 300px;
+    max-width: 100%;         /* Ensure it doesn't overflow on small screens */
     overflow-y: auto;
     border: 1px solid #ccc;
     padding: 10px;
-    margin: auto;
+    margin: auto;            /* Center it horizontally */
     background-color: transparent;
     border-radius: 20px;
+    box-sizing: border-box;  /* Include padding in width calculation */
 }
 
-/* Laptop/Tablet View (min-width: 769px) */
+/* Laptop/Tablet View (min-width: 850px) */
 @media (min-width: 850px) {
     #cart-container {
         height: 700px;
-        width: 800px;
+        width: 670px;  /* Adjust width for larger screens */
     }
 }
 
