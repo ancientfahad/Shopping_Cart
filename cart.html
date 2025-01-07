@@ -69,21 +69,20 @@
                         <div class="card-body p-0">
                             <div class="row g-0">
                                 <div class="col-lg-8 p-5">
-                                    <div class="d-flex justify-content-between align-items-center mb-5">
-                                        <!-- Clear Cart Button -->
-                                        <h3 class="fw-bold mb-0 d-flex align-items-center" role="button"
-                                            onclick="clearCart()">
-                                            <lord-icon src="https://cdn.lordicon.com/hwjcdycb.json" trigger="loop"
-                                                delay="2000" stroke="bold" colors="primary:#000000,secondary:#000000"
-                                                style="width:50px; height:50px; cursor:pointer;">
+                                    <!-- Cart Products -->
+                                    <div class="row mb-4 d-flex justify-content-between align-items-center" id="cart-container"></div>
+                                
+                                    <!-- Clear Cart Button (Centered) -->
+                                    <div class="d-flex justify-content-center mt-4">
+                                        <h3 class="fw-bold mb-0 d-flex align-items-center" role="button" onclick="clearCart()">
+                                            <lord-icon src="https://cdn.lordicon.com/hwjcdycb.json" trigger="loop" delay="2000" stroke="bold"
+                                                colors="primary:#000000,secondary:#000000" style="width:50px; height:50px; cursor:pointer;">
                                             </lord-icon>
                                             <span class="ms-2">Clear Cart</span>
                                         </h3>
                                     </div>
-                                    <!-- Cart Products -->
-                                    <div class="row mb-4 d-flex justify-content-between align-items-center"
-                                        id="cart-container"></div>
                                 </div>
+                                
 
                                 <!-- Summary -->
                                 <div class="col-lg-4 col-md-6 col-sm-12 bg-body-tertiary p-5">
