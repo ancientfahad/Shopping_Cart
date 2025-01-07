@@ -54,11 +54,7 @@ function displayCartProducts() {
             <div class="row mb-4">
                 <!-- Product Image -->
                 <div class="col-4 col-md-2">
-                    <img src="${
-                      product.image
-                    }" class="img-fluid rounded-3 cart-item-img" alt="${
-        product.title
-      }">
+                    <img src="${product.image}" class="img-fluid rounded-3 cart-item-img" alt="${product.title}">
                 </div>
 
                 <!-- Product Details -->
@@ -110,6 +106,7 @@ function displayCartProducts() {
                             </lord-icon>
                         </button>
                     </div>
+                    <hr class="my-4">
                 </div>
             </div>
         `;
