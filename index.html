@@ -35,25 +35,14 @@
     <!-- Navbar -->
     <section>
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="navbar">
-            <div class="container-fluid">
+            <div class="container-fluid d-flex justify-content-between align-items-center">
                 <!-- Brand Name -->
-                <a class="navbar-brand" href="./index.html"><span><img src="./asset/logo.gif" alt="" id="logo"></span></a>
-
-                <!-- Navbar Toggler for Mobile View -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
-                    aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <!-- Navbar Content -->
-                <div class="collapse navbar-collapse" id="navbarContent">
-                    <!-- Centered Search Bar -->
-                    <form class="d-flex mx-auto" role="search" style="width: 70%;">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    </form>
-
-                    <!-- Right Aligned Navigation Links -->
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <a class="navbar-brand" href="./index.html">
+                    <img src="./asset/logo.gif" alt="logo" id="logo">
+                </a>
+                <!-- Centered Navigation Links -->
+                <div class="d-flex align-items-center mx-auto">
+                    <ul class="navbar-nav mb-2 mb-lg-0 d-flex flex-row">
                         <li class="nav-item">
                             <a class="nav-link active d-flex align-items-center" aria-current="page"
                                 href="./index.html">
@@ -70,20 +59,23 @@
                                     stroke="bold" colors="primary:#000000,secondary:#000000"
                                     style="width:25px; height:25px;">
                                 </lord-icon>
-                                <span class="ms-2">Cart <span id="productQuantity">0</span></span>
+                                <span class="ms-2">Cart <span id="cart-quantity">0</span></span>
                             </a>
                         </li>
                     </ul>
                 </div>
+                <div></div>
             </div>
         </nav>
     </section>
+    <!-- Navbar -->
 
     <!-- Products Section -->
     <section id="products" class="container mt-5">
         <div class="row g-4" id="productsContainer">
         </div>
     </section>
+    <!-- Products Section -->
 
     <br>
 
@@ -122,6 +114,7 @@
             </div>
         </div>
     </section>
+    <!-- Footer Section -->
 
 
     <!-- Custom JavaScript -->

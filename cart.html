@@ -25,25 +25,14 @@
     <!-- Navbar -->
     <section>
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="navbar">
-            <div class="container-fluid">
+            <div class="container-fluid d-flex justify-content-between align-items-center">
                 <!-- Brand Name -->
-                <a class="navbar-brand" href="./index.html"><span><img src="./asset/logo.gif" alt="" id="logo"></span></a>
-
-                <!-- Navbar Toggler for Mobile View -->
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
-                    aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <!-- Navbar Content -->
-                <div class="collapse navbar-collapse" id="navbarContent">
-                    <!-- Centered Search Bar -->
-                    <form class="d-flex mx-auto" role="search" style="width: 70%;">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    </form>
-
-                    <!-- Right Aligned Navigation Links -->
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <a class="navbar-brand" href="./index.html">
+                    <img src="./asset/logo.gif" alt="logo" id="logo">
+                </a>
+                <!-- Centered Navigation Links -->
+                <div class="d-flex align-items-center mx-auto">
+                    <ul class="navbar-nav mb-2 mb-lg-0 d-flex flex-row">
                         <li class="nav-item">
                             <a class="nav-link active d-flex align-items-center" aria-current="page"
                                 href="./index.html">
@@ -65,9 +54,11 @@
                         </li>
                     </ul>
                 </div>
+                <div></div>
             </div>
         </nav>
     </section>
+    <!-- Navbar -->
 
     <!-- Products Section -->
     <section class="h-100 h-custom">
@@ -100,7 +91,7 @@
                                 </div>
 
                                 <!-- Summary -->
-                                <div class="col-lg-4 bg-body-tertiary p-5">
+                                <div class="col-lg-4 col-md-6 col-sm-12 bg-body-tertiary p-5">
                                     <h3 class="fw-bold mb-5">Summary</h3>
                                     <hr class="my-4">
                                     <h5 class="text-uppercase mb-3">Shipping</h5>
@@ -112,15 +103,16 @@
                                         </select>
                                     </div>
 
-                                    <h5 class="text-uppercase mb-3">Discount Code <span><button type="button"
-                                                id="apply-coupon" class="btn btn-primary mt-2">Apply
-                                                Coupon</button></span></h5>
+                                    <h5 class="text-uppercase mb-3">Discount Code
+                                    </h5>
                                     <div class="mb-5">
                                         <div class="form-outline">
                                             <input type="text" id="discount-code"
                                                 class="form-control form-control-lg" />
                                             <!-- Added button to apply discount -->
                                         </div>
+                                        <button type="button" id="apply-coupon" class="btn btn-primary mt-2">Apply
+                                            Coupon</button>
                                     </div>
 
                                     <hr class="my-4">
@@ -149,6 +141,7 @@
             </div>
         </div>
     </section>
+    <!-- Products Section -->
 
     <!-- Footer Section -->
     <footer class="bg-dark text-light py-4">
@@ -182,6 +175,7 @@
             </div>
         </div>
     </footer>
+    <!-- Footer Section -->
 
     <!-- Custom JavaScript -->
     <script src="./js/cart.js"></script>
