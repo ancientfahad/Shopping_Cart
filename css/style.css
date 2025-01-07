@@ -1,0 +1,185 @@
+/* General Body Styling */
+body {
+    font-family: Monaco, monospace;
+    background-color: rgb(255, 254, 253);
+    padding-top: 56px;
+    /* Adjust according to the navbar height */
+}
+
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Slightly opaque white background */
+    z-index: 1050;
+    display: none;
+    /* Hidden by default */
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+}
+
+.loading-overlay.show {
+    display: flex;
+    /* Show the overlay */
+}
+
+/* Add body class to prevent interaction when loading */
+body.loading {
+    overflow: hidden;
+    pointer-events: none;
+    /* Disable interaction */
+}
+
+#footer {
+    display: none;
+    /* Hide footer initially */
+}
+
+#navbar {
+    display: none;
+    /* Hide navbar initially */
+}
+
+body.loading #navbar {
+    display: none;
+    /* Ensure navbar remains hidden while loading */
+}
+
+body:not(.loading) #navbar {
+    display: block;
+    /* Show navbar when loading is complete */
+}
+
+body.loading #footer {
+    display: none;
+    /* Ensure footer remains hidden while loading */
+}
+
+body:not(.loading) #footer {
+    display: block;
+    /* Show footer when loading is complete */
+}
+
+/* Navbar Styling */
+#navbar {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-link {
+    font-size: 1rem;
+    margin: 0 0.5rem;
+}
+
+.nav-link span {
+    font-weight: bold;
+}
+
+/* Product Cards Styling */
+.card {
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+    border-bottom: 2px solid #ddd;
+}
+
+.card-title {
+    font-weight: bold;
+    color: #333;
+}
+
+.card-text {
+    color: #555;
+}
+
+.card-img-top {
+    width: 100%;
+    /* Scale to card width */
+    height: 200px;
+    /* Fixed height for uniformity */
+    object-fit: contain;
+    /* Fit the image within the bounds without cropping */
+    border-bottom: none;
+    /* Remove border */
+}
+
+.btn {
+    font-size: 0.9rem;
+    padding: 0.4rem 1rem;
+    margin: 0.5rem;
+}
+
+/* Buttons Specific Styling */
+.btn-success {
+    background-color: #28a745;
+    border: none;
+    width: 150vh;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+    width: 150vh;
+}
+
+/* Responsive Grid Gaps */
+@media (max-width: 576px) {
+    .card {
+        margin-bottom: 1.5rem;
+    }
+}
+
+#cart-container {
+    max-height: 650px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 20px;
+    background-color: transparent;
+    border-radius: 20px;
+}
+
+/* Ensure images fit the container and have the same size */
+.cart-item-img {
+    width: 100%;
+    /* Ensures the image takes up the full width of the container */
+    height: 100px;
+    /* Fixed height for all images */
+    object-fit: contain;
+    /* Makes the image cover the box without distortion */
+    object-position: center;
+    /* Ensures the image is centered within the container */
+}
+
+/* Remove button outline and styling */
+button {
+    border: none; /* Remove the border */
+    background: transparent; /* Remove any background color */
+    padding: 0; /* Remove padding around the button */
+    width: auto; /* Adjust the width based on content */
+}
+
+#logo{
+    width: 100%;
+    height: 50px;
+    margin: 0 auto;
+    display: block;
+}
