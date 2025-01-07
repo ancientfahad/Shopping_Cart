@@ -147,15 +147,25 @@ body:not(.loading) #footer {
     }
 }
 
+/* Default (Mobile) View */
 #cart-container {
-    max-height: 650px;
+    height: 650px;
+    width: 300px;
     overflow-y: auto;
     border: 1px solid #ccc;
     padding: 10px;
-    margin: 20px;
     background-color: transparent;
     border-radius: 20px;
 }
+
+/* Laptop/Tablet View (min-width: 769px) */
+@media (min-width: 850px) {
+    #cart-container {
+        height: 700px;
+        width: 800px;
+    }
+}
+
 
 /* Ensure images fit the container and have the same size */
 .cart-item-img {
