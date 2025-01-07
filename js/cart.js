@@ -15,6 +15,9 @@ const discountCodeInput = document.getElementById("discount-code"); // Discount 
 const shippingSelect = document.getElementById("shipping-options"); // Shipping options
 const applyCouponButton = document.getElementById("apply-coupon"); // Apply coupon button
 
+const clearCartIcon = document.getElementById("clear-cart-icon"); // Clear cart icon
+const clearCartLabel = document.getElementById("clear-cart-label"); // Clear cart label
+
 // Clear the container before appending new items
 cartContainer.innerHTML = "";
 
@@ -32,7 +35,12 @@ function displayCartProducts() {
 
   // Check if cart is empty
   if (Object.keys(cart).length === 0) {
+    cartContainer.style.height = "50px";
     cartContainer.innerHTML = `<p class="text-center">Your cart is empty!</p>`;
+
+    clearCartIcon.style.display = "none"; // Hide the clear cart icon
+    clearCartLabel.style.display = "none"; // Hide the clear cart label
+
     updateCartSummary();
     return;
   }
@@ -127,10 +135,18 @@ function updateCartSummary() {
 
   cartCountNav.textContent = totalQuantity; // Update the navbar count
 
-  totalPriceSummary.textContent = `$ ${totalPrice.toFixed(2)}`; // Update total price
-  totalShippingFeeSummary.textContent = `$ ${currentShippingCost.toFixed(2)}`; // Update shipping cost
-  totalDiscountSummary.textContent = `$ ${discountAmount.toFixed(2)}`; // Update discount amount
-  finalTotalSummary.textContent = `$ ${finalPrice.toFixed(2)}`; // Update final total
+  if (Object.keys(cart).length === 0) {
+    totalPriceSummary.textContent = `$ 0.00`; // Update total price
+    totalShippingFeeSummary.textContent = `$ 0.00`; // Update shipping cost
+    totalDiscountSummary.textContent = `$ 0.00`; // Update discount amount
+    finalTotalSummary.textContent = `$ 0.00`; // Update final total
+  } 
+  else {
+    totalPriceSummary.textContent = `$ ${totalPrice.toFixed(2)}`; // Update total price
+    totalShippingFeeSummary.textContent = `$ ${currentShippingCost.toFixed(2)}`; // Update shipping cost
+    totalDiscountSummary.textContent = `$ ${discountAmount.toFixed(2)}`; // Update discount amount
+    finalTotalSummary.textContent = `$ ${finalPrice.toFixed(2)}`; // Update final total
+  }
 }
 
 // Function to apply discount based on discount code
