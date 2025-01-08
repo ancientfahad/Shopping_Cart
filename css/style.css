@@ -3,9 +3,9 @@ body {
     font-family: Monaco, monospace;
     background-color: rgb(255, 254, 253);
     padding-top: 56px;
-    /* Adjust according to the navbar height */
 }
 
+/* Loading Overlay */
 .loading-overlay {
     position: fixed;
     top: 0;
@@ -13,56 +13,32 @@ body {
     width: 100%;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.9);
-    /* Slightly opaque white background */
     z-index: 1050;
     display: none;
-    /* Hidden by default */
     justify-content: center;
-    /* Center horizontally */
     align-items: center;
-    /* Center vertically */
 }
 
 .loading-overlay.show {
     display: flex;
-    /* Show the overlay */
 }
 
-/* Add body class to prevent interaction when loading */
 body.loading {
     overflow: hidden;
     pointer-events: none;
-    /* Disable interaction */
 }
 
-#footer {
-    display: none;
-    /* Hide footer initially */
-}
-
+#footer,
 #navbar {
     display: none;
-    /* Hide navbar initially */
-}
-
-body.loading #navbar {
-    display: none;
-    /* Ensure navbar remains hidden while loading */
 }
 
 body:not(.loading) #navbar {
     display: block;
-    /* Show navbar when loading is complete */
-}
-
-body.loading #footer {
-    display: none;
-    /* Ensure footer remains hidden while loading */
 }
 
 body:not(.loading) #footer {
     display: block;
-    /* Show footer when loading is complete */
 }
 
 /* Navbar Styling */
@@ -112,32 +88,19 @@ body:not(.loading) #footer {
 
 .card-img-top {
     width: 100%;
-    /* Scale to card width */
     height: 200px;
-    /* Fixed height for uniformity */
     object-fit: contain;
-    /* Fit the image within the bounds without cropping */
-    border-bottom: none;
-    /* Remove border */
-}
-
-.btn {
-    font-size: 0.9rem;
-    padding: 0.4rem 1rem;
-    margin: 0.5rem;
 }
 
 /* Buttons Specific Styling */
 .btn-success {
     background-color: #28a745;
     border: none;
-    width: 150vh;
 }
 
 .btn-danger {
     background-color: #dc3545;
     border: none;
-    width: 150vh;
 }
 
 /* Responsive Grid Gaps */
@@ -147,61 +110,120 @@ body:not(.loading) #footer {
     }
 }
 
-/* Ensure the parent container is flex and centered */
+/* Parent Container */
 .container {
     display: flex;
-    justify-content: center;  /* Horizontally center */
-    align-items: center;      /* Vertically center */
-    min-height: 100vh;         /* Take full viewport height */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
-/* Default (Mobile) View */
+/* Cart Container */
 #cart-container {
-    height: 650px;
-    width: 300px;
-    max-width: 100%;         /* Ensure it doesn't overflow on small screens */
-    overflow-y: auto;
     border: 1px solid #ccc;
     padding: 10px;
-    margin: auto;            /* Center it horizontally */
-    background-color: transparent;
     border-radius: 20px;
-    box-sizing: border-box;  /* Include padding in width calculation */
+    background-color: #fff;
+    overflow-y: auto;
+    height: auto;
+    margin-bottom: 20px;
 }
 
-/* Laptop/Tablet View (min-width: 850px) */
-@media (min-width: 850px) {
-    #cart-container {
-        height: 700px;
-        width: 670px;  /* Adjust width for larger screens */
+/* Clear Cart Button */
+#clear-cart-button {
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+
+/* Summary Section */
+.col-lg-4 {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+/* Default Mobile View Adjustments */
+@media (max-width: 575px) {
+    .col-lg-8 {
+        text-align: center;
+    }
+
+    .col-lg-4 {
+        margin-top: 20px;
     }
 }
 
+/* Tablet View Adjustments */
+@media (min-width: 576px) and (max-width: 991px) {
+    .col-lg-8 {
+        flex: 1 1 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+        text-align: center;
+    }
 
-/* Ensure images fit the container and have the same size */
-.cart-item-img {
-    width: 100%;
-    /* Ensures the image takes up the full width of the container */
-    height: 100px;
-    /* Fixed height for all images */
-    object-fit: contain;
-    /* Makes the image cover the box without distortion */
-    object-position: center;
-    /* Ensures the image is centered within the container */
+    .col-lg-4 {
+        flex: 1 1 100%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
 }
 
-/* Remove button outline and styling */
+/* Laptop and Desktop View */
+@media (min-width: 992px) {
+    .col-lg-8 {
+        max-width: 66.66667%;
+    }
+
+    .col-lg-4 {
+        max-width: 33.33333%;
+    }
+}
+
+/* Buttons Styling */
 button {
     border: none;
-    /* Remove the border */
     background: transparent;
-    /* Remove any background color */
     padding: 0;
-    /* Remove padding around the button */
     width: auto;
-    /* Adjust the width based on content */
 }
 
+/* Form Elements in Summary */
+.col-lg-4 select,
+.col-lg-4 input,
+.col-lg-4 button {
+    width: 100%;
+}
+
+/* Flex Alignment for Summary Details */
+.col-lg-4 .d-flex {
+    margin-bottom: 15px;
+}
+
+/* Adjust Summary Header */
+.col-lg-4 h3 {
+    font-size: 1.5rem;
+}
+
+/* Images in Cart */
+.cart-item-img {
+    width: 100%;
+    height: 100px;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* Remove Button Outline */
+button {
+    border: none;
+    background: transparent;
+    padding: 0;
+    width: auto;
+}
+
+/* Logo Styling */
 #logo {
     width: 100%;
     height: 50px;
