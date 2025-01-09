@@ -230,3 +230,10 @@ button {
     margin: 0 auto;
     display: block;
 }
+
+.cart-item-title,
+.cart-item-category {
+    text-align: left;
+    margin: 0; /* Ensures no extra margin */
+    padding: 0; /* Ensures no extra padding */
+}

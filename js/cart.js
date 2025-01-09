@@ -59,65 +59,65 @@ function displayCartProducts() {
 
       // Create the HTML structure for each cart item
       const cartItemHTML = `
-            <div class="row mb-4">
-                <!-- Product Image -->
-                <div class="col-4 col-md-2">
-                    <img src="${product.image}" class="img-fluid rounded-3 cart-item-img" alt="${product.title}">
-                </div>
+    <div class="row mb-4">
+        <!-- Product Image -->
+        <div class="col-4 col-md-2">
+            <img src="${product.image}" class="img-fluid rounded-3 cart-item-img" alt="${product.title}">
+        </div>
 
-                <!-- Product Details -->
-                <div class="col-8 col-md-10">
-                    <h6>${product.title}</h6>    
-                    <h6 class="text-muted">${product.category}</h6>
+        <!-- Product Details -->
+        <div class="col-8 col-md-10">
+            <h6 class="cart-item-title">${product.title}</h6>    
+            <h6 class="cart-item-category text-muted">${product.category}</h6>
 
-                    <!-- Price and Total -->
-                    <h6 class="mb-0 d-flex align-items-center flex-nowrap">
-                        <span>$${product.price.toFixed(2)}</span>
-                        <span class="mx-1"><i class="fas fa-times"></i></span>
-                        <span>${quantity}</span>
-                        <span class="mx-1"><i class="fas fa-equals"></i></span>
-                        <span>$${total}</span>
-                    </h6>
+            <!-- Price and Total -->
+            <h6 class="mb-0 d-flex align-items-center flex-nowrap">
+                <span>$${product.price.toFixed(2)}</span>
+                <span class="mx-1"><i class="fas fa-times"></i></span>
+                <span>${quantity}</span>
+                <span class="mx-1"><i class="fas fa-equals"></i></span>
+                <span>$${total}</span>
+            </h6>
 
-                    <!-- Action Buttons (Plus, Minus, Remove) -->
-                    <div class="d-flex align-items-center mt-2 flex-nowrap">
-                        <!-- Minus Button -->
-                        <button onclick="decreaseQuantity(${product.id})" class="btn p-0 me-1">
-                            <lord-icon
-                                src="https://cdn.lordicon.com/rypcsrlk.json"
-                                trigger="hover"
-                                stroke="bold"
-                                colors="primary:#000000,secondary:#000000"
-                                style="width:30px;height:25px">
-                            </lord-icon>
-                        </button>
+            <!-- Action Buttons (Plus, Minus, Remove) -->
+            <div class="d-flex align-items-center mt-2 flex-nowrap">
+                <!-- Minus Button -->
+                <button onclick="decreaseQuantity(${product.id})" class="btn p-0 me-1">
+                    <lord-icon
+                        src="https://cdn.lordicon.com/rypcsrlk.json"
+                        trigger="hover"
+                        stroke="bold"
+                        colors="primary:#000000,secondary:#000000"
+                        style="width:30px;height:25px">
+                    </lord-icon>
+                </button>
 
-                        <!-- Plus Button -->
-                        <button onclick="increaseQuantity(${product.id})" class="btn p-0 me-1">
-                            <lord-icon
-                                src="https://cdn.lordicon.com/sbnjyzil.json"
-                                trigger="hover"
-                                stroke="bold"
-                                colors="primary:#000000,secondary:#000000"
-                                style="width:30px;height:25px">
-                            </lord-icon>
-                        </button>
+                <!-- Plus Button -->
+                <button onclick="increaseQuantity(${product.id})" class="btn p-0 me-1">
+                    <lord-icon
+                        src="https://cdn.lordicon.com/sbnjyzil.json"
+                        trigger="hover"
+                        stroke="bold"
+                        colors="primary:#000000,secondary:#000000"
+                        style="width:30px;height:25px">
+                    </lord-icon>
+                </button>
 
-                        <!-- Remove Button -->
-                        <button onclick="removeItem(${product.id})" class="btn p-0">
-                            <lord-icon
-                                src="https://cdn.lordicon.com/hwjcdycb.json"
-                                trigger="hover"
-                                stroke="bold"
-                                colors="primary:#000000,secondary:#000000"
-                                style="width:30px;height:25px">
-                            </lord-icon>
-                        </button>
-                    </div>
-                    <hr class="my-4">
-                </div>
+                <!-- Remove Button -->
+                <button onclick="removeItem(${product.id})" class="btn p-0">
+                    <lord-icon
+                        src="https://cdn.lordicon.com/hwjcdycb.json"
+                        trigger="hover"
+                        stroke="bold"
+                        colors="primary:#000000,secondary:#000000"
+                        style="width:30px;height:25px">
+                    </lord-icon>
+                </button>
             </div>
-        `;
+            <hr class="my-4">
+        </div>
+    </div>
+`;
 
       // Append the generated HTML to the cart container
       cartContainer.innerHTML += cartItemHTML;
