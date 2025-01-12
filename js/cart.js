@@ -9,6 +9,7 @@ const totalShippingFeeSummary = document.getElementById("total-shipping-fee"); /
 const totalDiscountSummary = document.getElementById("total-discount"); // Total Discount
 const finalTotalSummary = document.getElementById("final-total"); // Final Total
 
+const mainContainer = document.getElementById("main-container"); // Main container
 const cartContainer = document.getElementById("cart-container"); // Cart container
 const cartSummary = document.getElementById("cart-summary"); // Cart summary
 
@@ -19,6 +20,8 @@ const checkoutButton = document.getElementById("checkout"); // Checkout button
 
 const clearCartIcon = document.getElementById("clear-cart-icon"); // Clear cart icon
 const clearCartLabel = document.getElementById("clear-cart-label"); // Clear cart label
+
+const emptyCartMessage = document.getElementById("empty-cart-message"); // Empty cart message
 
 // Clear the container before appending new items
 cartContainer.innerHTML = "";
@@ -43,9 +46,14 @@ function displayCartProducts() {
 
     clearCartIcon.style.display = "none"; // Hide the clear cart icon
     clearCartLabel.style.display = "none"; // Hide the clear cart label
+    mainContainer.style.display = "none"; // Hide the main container
+    emptyCartMessage.style.display = "block"; // Show the empty cart message
 
     updateCartSummary();
     return;
+  }
+  else {
+    emptyCartMessage.style.display = "none"; // Show the empty cart message
   }
 
   // Loop through each item in the cart object
