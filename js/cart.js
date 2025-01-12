@@ -14,6 +14,7 @@ const cartContainer = document.getElementById("cart-container"); // Cart contain
 const discountCodeInput = document.getElementById("discount-code"); // Discount input
 const shippingSelect = document.getElementById("shipping-options"); // Shipping options
 const applyCouponButton = document.getElementById("apply-coupon"); // Apply coupon button
+const checkoutButton = document.getElementById("checkout"); // Checkout button
 
 const clearCartIcon = document.getElementById("clear-cart-icon"); // Clear cart icon
 const clearCartLabel = document.getElementById("clear-cart-label"); // Clear cart label
@@ -217,9 +218,18 @@ function clearCart() {
   displayCartProducts(); // Refresh the cart display
 }
 
+// Function to checkout
+function checkout() {
+  localStorage.removeItem("cart"); // Remove cart from localStorage
+  cart = {}; // Reset the cart variable
+  alert("Checkout Successful!");
+  displayCartProducts(); // Refresh the cart display
+}
+
 // Event listeners
 applyCouponButton.addEventListener("click", applyDiscount); // Apply discount
 shippingSelect.addEventListener("change", updateShippingCost); // Update shipping cost
+checkoutButton.addEventListener("click", checkout); // Checkout
 
 // Call the function to display cart products
 displayCartProducts();
