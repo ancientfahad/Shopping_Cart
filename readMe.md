@@ -18,3 +18,6 @@ Local Storage for State Management:
 
 Product Details View:
         Clicking on a product shows its detailed description page, offering more information about the selected item.
+
+Discount Code:
+        OSTAD
