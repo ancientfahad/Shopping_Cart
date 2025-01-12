@@ -119,7 +119,18 @@ function displayCartProducts() {
 
 // Function to update the cart summary
 function updateCartSummary() {
+
+  const codeValue = discountCodeInput.value.trim().toLowerCase();
   const finalPrice = totalPrice + currentShippingCost - discountAmount;
+
+  if(codeValue === "ostad10"){
+    discountAmount = totalPrice * 0.1; // 10% discount
+  }
+  
+  if(codeValue === "ostad5"){
+    discountAmount = totalPrice * 0.05; // 5% discount
+  }
+
   const afterDiscountPrice = totalPrice - discountAmount;
 
   cartCountNav.textContent = totalQuantity;
@@ -133,7 +144,6 @@ function updateCartSummary() {
 // Function to apply discount
 function applyDiscount() {
   const code = discountCodeInput.value.trim().toLowerCase();
-
   // Validate promo code
   if (code === "ostad10") {
     discountAmount = totalPrice * 0.1; // 10% discount
@@ -167,6 +177,7 @@ function increaseQuantity(productId) {
     cart[productId].quantity++;
   }
   localStorage.setItem("cart", JSON.stringify(cart)); // Save to local storage
+  updateCartSummary();
   displayCartProducts(); // Refresh the cart
 }
 
@@ -179,6 +190,7 @@ function decreaseQuantity(productId) {
     }
   }
   localStorage.setItem("cart", JSON.stringify(cart)); // Save to local storage
+  updateCartSummary();
   displayCartProducts(); // Refresh the cart
 }
 
@@ -188,6 +200,7 @@ function removeItem(productId) {
     delete cart[productId]; // Remove the item
   }
   localStorage.setItem("cart", JSON.stringify(cart)); // Save to local storage
+  updateCartSummary();
   displayCartProducts(); // Refresh the cart
 }
 
