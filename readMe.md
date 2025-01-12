@@ -1,6 +1,8 @@
 Module 20 Assignment
 
 Live Link: https://ancientfahad.github.io/Shopping_Cart/index.html
+GitHub Link: https://github.com/ancientfahad/Shopping_Cart
+
 Shopping Cart Project
 
 Key Features:

@@ -136,7 +136,7 @@ function updateCartSummary() {
 // Function to apply discount based on discount code
 function applyDiscount() {
   const code = discountCodeInput.value.trim();
-  if (code === "OSTAD" && !couponApplied) {
+  if (code.toUpperCase() === "OSTAD" && !couponApplied) {
     couponApplied = true;
     discountAmount = totalPrice * 0.1; // 10% discount
     alert("10% discount applied!");
