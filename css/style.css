@@ -125,7 +125,7 @@ body:not(.loading) #footer {
     border-radius: 20px;
     background-color: #fff;
     overflow-y: auto;
-    height: auto;
+    height: 700px;
     margin-bottom: 20px;
 }
 
@@ -174,11 +174,11 @@ body:not(.loading) #footer {
 /* Laptop and Desktop View */
 @media (min-width: 992px) {
     .col-lg-8 {
-        max-width: 66.66667%;
+        max-width: 60%;
     }
 
     .col-lg-4 {
-        max-width: 33.33333%;
+        max-width: 40%;
     }
 }
 
@@ -231,9 +231,10 @@ button {
     display: block;
 }
 
+/* Cart Item Title and Category */
 .cart-item-title,
 .cart-item-category {
     text-align: left;
-    margin: 0; /* Ensures no extra margin */
-    padding: 0; /* Ensures no extra padding */
+    margin: 0;
+    padding: 0;
 }
